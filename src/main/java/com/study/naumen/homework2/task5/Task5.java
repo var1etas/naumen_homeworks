@@ -11,6 +11,10 @@ import java.net.http.HttpResponse;
 import java.util.Scanner;
 
 public class Task5 implements Task {
+
+    static boolean flag;
+    static String fileName;
+
     public static void main(String[] args){
         Task5 task5 = new Task5();
         Scanner sc = new Scanner(System.in);
@@ -26,11 +30,12 @@ public class Task5 implements Task {
             }
         }
     }
-    static boolean flag;
-    static String fileName;
+
     @Override
     public void start() {
-        String url = "https://dl2.mp3party.net/download/276990";
+        //https://cdn.mp3xa.me/wd0tdGtyFv3SyezIuveZ7Q/1727740057/L21wMy8yMDEyLzEwL0FkZWxlIC0gUm9sbGluZyBpbiB0aGUgZGVlcC5tcDM
+        //https://dl2.mp3party.net/download/276990
+        String url = "https://cdn.mp3xa.me/wd0tdGtyFv3SyezIuveZ7Q/1727740057/L21wMy8yMDEyLzEwL0FkZWxlIC0gUm9sbGluZyBpbiB0aGUgZGVlcC5tcDM";
         try (HttpClient client = HttpClient.newHttpClient())
         {
             HttpRequest request = HttpRequest.newBuilder()
@@ -38,7 +43,6 @@ public class Task5 implements Task {
                     .build();
             HttpResponse<String> jsonResponse = client.send(request,
                     HttpResponse.BodyHandlers.ofString());
-
             String response = jsonResponse.headers().map().get("content-disposition").getLast();
             fileName = response.substring(response.indexOf("=")+2,response.lastIndexOf("\""));
         } catch (Exception e){

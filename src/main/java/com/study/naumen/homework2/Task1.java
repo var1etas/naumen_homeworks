@@ -11,8 +11,8 @@ public class Task1 {
         System.out.println(minValue(arr));
     }
 
-    public static int minValue(int[] arr){
-        int min = (int) Math.pow(2,5);
+    public static int minValue(int[] arr) {
+        int min = Integer.MAX_VALUE;
         for (int num : arr) {
             if (Math.abs(num) < min) min = Math.abs(num);
         }
