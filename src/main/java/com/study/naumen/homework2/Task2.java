@@ -2,17 +2,20 @@ package com.study.naumen.homework2;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Task2 {
-    public static void main(String[] args) {
+    public void run() {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
         List<Double> arr = new ArrayList<>();
-        for(int i = 0; i < 101; i++){
+        for(int i = 0; i < n; i++){
             arr.add(Math.random());
         }
-        quickSort(arr,0, 100);
+        quickSort(arr,0, n-1);
         System.out.println(arr);
     }
-    public static void quickSort(List<Double> arr, int low, int high) {
+    public void quickSort(List<Double> arr, int low, int high) {
         if (low < high) {
             int pi = partition(arr, low, high);
 
@@ -21,7 +24,7 @@ public class Task2 {
         }
     }
 
-    private static int partition(List<Double> arr, int low, int high) {
+    private int partition(List<Double> arr, int low, int high) {
         int middle = low + (high - low) / 2;
         Double pivot = arr.get(middle);
         Double temp = arr.get(middle);

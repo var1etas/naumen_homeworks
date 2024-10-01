@@ -15,7 +15,7 @@ public class Task5 implements Task {
     static boolean flag;
     static String fileName;
 
-    public static void main(String[] args){
+    public void run() {
         Task5 task5 = new Task5();
         Scanner sc = new Scanner(System.in);
         while (true){
@@ -33,9 +33,7 @@ public class Task5 implements Task {
 
     @Override
     public void start() {
-        //https://cdn.mp3xa.me/wd0tdGtyFv3SyezIuveZ7Q/1727740057/L21wMy8yMDEyLzEwL0FkZWxlIC0gUm9sbGluZyBpbiB0aGUgZGVlcC5tcDM
-        //https://dl2.mp3party.net/download/276990
-        String url = "https://cdn.mp3xa.me/wd0tdGtyFv3SyezIuveZ7Q/1727740057/L21wMy8yMDEyLzEwL0FkZWxlIC0gUm9sbGluZyBpbiB0aGUgZGVlcC5tcDM";
+        String url = "https://cdn.mp3xa.me/PWz1xuIAReEGrHl_DXYk9w/1727808529/L21wMy8yMDEyLzEwL0FkZWxlIC0gUm9sbGluZyBpbiB0aGUgZGVlcC5tcDM";
         try (HttpClient client = HttpClient.newHttpClient())
         {
             HttpRequest request = HttpRequest.newBuilder()

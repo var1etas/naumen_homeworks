@@ -9,7 +9,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class Task4 {
-    public static void main(String[] args) {
+    public void run() {
         try (HttpClient client = HttpClient.newHttpClient())
         {
             HttpRequest request = HttpRequest.newBuilder()

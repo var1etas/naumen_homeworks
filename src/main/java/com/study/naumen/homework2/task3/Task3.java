@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class Task3 {
-    public static void main(String[] args) {
+    public void run() {
         List<Employee> employeeList = new ArrayList<>();
         Employee employee1 = new Employee("Alex", 20, "IT",90000.0);
         Employee employee2 = new Employee("Sergey", 25, "IT",150000.0);
